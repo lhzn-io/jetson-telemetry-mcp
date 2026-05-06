@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jetson-telemetry-mcp"
+version = "0.1.0"
+description = "Strictly read-only MCP server exposing Jetson Tegra statistics"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.0.0",
+    "uvicorn>=0.30.0",
+    "starlette>=0.38.0"
+]
+
+[project.scripts]
+jetson-telemetry-mcp = "jetson_telemetry_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/jetson_telemetry_mcp"]
