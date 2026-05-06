@@ -16,7 +16,7 @@ Report on the health and status of NVIDIA Jetson hardware.
 All health and info commands are invoked using the MCP tools exposed by the `jetson-telemetry-mcp` service.
 
 ## Core Capabilities
-- **Board Identity**: Use `board_identity` to determine the exact hardware model and serial number.
+- **Board Identity**: Use `board_identity` to determine the exact hardware model and serial number. Use `jetpack_version` to identify the Jetpack and L4T release sequence.
 - **Health Report**: Use `tegrastats_snapshot` to get a snapshot of CPU load, GPU load, RAM usage, and overarching statistics.
 - **Thermals**: Use `thermal_zones` for detailed CPU, GPU, and SoC temperatures. Use `fan_status` to observe PWM fan targets and current RPM.
 - **Power**: Use `power_mode` to check the current NVPM mode. Use `power_rails` to read instantaneous wattage, voltage, and current on specific board channels (VDD_IN, VDD_CPU, VDD_GPU) via the INA3221 sensors.
