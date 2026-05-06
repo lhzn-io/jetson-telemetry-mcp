@@ -134,6 +134,19 @@ async def board_identity() -> str:
     except Exception as e:
         return json.dumps({"error": str(e)})
 
+@mcp.tool()
+async def jetpack_version() -> str:
+    """Read the Jetpack version sequence and L4T release info from /etc/nv_tegra_release."""
+    try:
+        release_path = "/etc/nv_tegra_release"
+        if os.path.exists(release_path):
+            with open(release_path, "r") as f:
+                return json.dumps({"raw": f.read().strip()})
+        else:
+            return json.dumps({"error": f"{release_path} not found. Ensure it is mounted into the container."})
+    except Exception as e:
+        return json.dumps({"error": str(e)})
+
 @mcp.prompt()
 def jetson_telemetry_instructions() -> str:
     """Get the usage guidelines and capabilities for the Jetson telemetry MCP server."""

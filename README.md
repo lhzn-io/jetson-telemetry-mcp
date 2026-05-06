@@ -8,6 +8,7 @@ This read-only MCP server exposes system diagnostic data from the Jetson Tegra s
 - **Power Rails** (Voltages, Current, Power consumption)
 - **Power Modes**
 - **Fan Status**
+- **Jetpack Version & L4T Release**
 
 ## Installation & Usage
 
@@ -23,6 +24,7 @@ To run with appropriate privileges to read sysfs mappings on the host Jetson:
 docker run -d \
   --name jetson-telemetry \
   -v /sys:/sys:ro \
+  -v /etc/nv_tegra_release:/etc/nv_tegra_release:ro \
   -v /etc/nvpmodel.conf:/etc/nvpmodel.conf:ro \
   -v /var/lib/nvpmodel:/var/lib/nvpmodel:ro \
   -p 8765:8765 \
