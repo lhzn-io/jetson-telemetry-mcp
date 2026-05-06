@@ -4,10 +4,10 @@ An MCP (Model Context Protocol) server exposing NVIDIA Jetson telemetry endpoint
 
 This read-only MCP server exposes system diagnostic data from the Jetson Tegra system (such as an AGX Orin) over an SSE transport, enabling large language models to seamlessly monitor hardware health, including:
 
-- 🌡️ **Thermal Zones** (CPU, GPU, SOC, etc.)
-- ⚡ **Power Rails** (Voltages, Current, Power consumption)
-- 💡 **Power Modes**
-- 🌀 **Fan Status**
+- **Thermal Zones** (CPU, GPU, SOC, etc.)
+- **Power Rails** (Voltages, Current, Power consumption)
+- **Power Modes**
+- **Fan Status**
 
 ## Installation & Usage
 
