@@ -30,3 +30,9 @@ docker run -d \
   -p 8765:8765 \
   jetson-telemetry-mcp
 ```
+
+Alternatively, you can run it via Docker Compose using the included `docker-compose.yml`:
+
+```bash
+docker compose up -d --build
+```
